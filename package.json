@@ -1,0 +1,21 @@
+{
+  "name": "tell-me-your-story",
+  "version": "0.0.1",
+  "description": "A Pen created at CodePen.io. You can find this one at http://codepen.io/stefanhintz/pen/BzWbdw.",
+  "main": "index.html",
+  "devDependencies": {
+    "jshint": "latest",
+    "node-sass": "latest",
+    "parallelshell": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "jshint **",
+    "build:css": "node-sass --include-path scss scss/style.scss css/style.css",
+    "watch:css": "npm run build:css -- -w",
+    "build:watch": "parallelshell 'npm run watch:css'",
+    "prebuild":"lint"
+  },
+  "author": "",
+  "license": "ISC"
+}
