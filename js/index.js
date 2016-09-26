@@ -9,6 +9,16 @@ $("#send").click(function() {
   recognition.start();
 })
 
+var map = new ga.Map({
+  target: 'bigBap',
+  layers: [layer],
+  view: new ol.View({
+    resolution: 500,
+    center: [670000, 160000]
+  })
+  
+});
+
 recognition.onresult = function(event) {
   var text = event.results[0][0].transcript;
   console.log(text);
@@ -69,9 +79,9 @@ function alchemyText(text) {
             });
           });
       } else {
-        var index = $("#sections li").size()-1;
-        var oldtext = $("#post-" + index+" p").text();
-        $("#post-" + index+" p").text(oldtext+" "+text);
+        var index = $("#sections li").size() - 1;
+        var oldtext = $("#post-" + index + " p").text();
+        $("#post-" + index + " p").text(oldtext + " " + text);
       }
 
 
@@ -114,5 +124,5 @@ function alchemyText(text) {
 }
 
 function buidPost(text, city, index) {
-  $("#sections").prepend(" <li id='post-" + index + "'><div class='mapContainer'><div class='mapWrapper'><div id='post-map-" + index + "' class='map'></div></div></div><div class='textContainer'><h2>When i was in " + city + "</h2><p>" + text + "</p></div></li>");
+  $("#sections").append(" <li id='post-" + index + "'><div class='mapContainer'><div class='mapWrapper'><div id='post-map-" + index + "' class='map'></div></div></div><div class='textContainer'><h2>When i was in " + city + "</h2><p>" + text + "</p></div></li>");
 }

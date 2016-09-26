@@ -44,8 +44,15 @@ body {
   flex-direction: column;
 }
 
+#sections {
+  flex: 1;
+}
+
+form {
+  flex: 80px 0 0;
+}
+
 #mapContainer {
-  background-image: url(../img/map_complete_placeholder.png);
   background-size: cover;
   background-position: center;
 }
